@@ -1,30 +1,16 @@
-import React, { useRef } from 'react'
-
-
+import React, { useState } from 'react'
 
 function App() {
-  const inputRef = useRef(null)
 
-  // const onClickhanddler = () => {
-  //   inputRef.current.focus();
-  // }
-
-
-  function onClickhanddler() {
-    inputRef.current.focus();
-  }
+  const [count, setcount] = useState(0);
   return (
     <div>
-      <h1>profilename</h1>
-      <input
-        type='text'
-        
-        ref={inputRef}
-      />
-      <button onClick={onClickhanddler}>save</button>
-      
+      <p>count: {count}</p>
+      <button onClick={() => setcount(count + 1)}>incremental</button>
+      <button onClick={() => setcount(count - 1)}>decrememtal</button>
+      <button onClick={() => setcount(0)}>Reset</button>
     </div>
   )
 }
 
-export default App
+export default App;
